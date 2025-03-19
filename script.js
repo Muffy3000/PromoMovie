@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Parallax scrolling effect
+    const parallaxSections = document.querySelectorAll('.hero, .antagonist');
+    let scrollPosition = window.pageYOffset;
+    
+    function handleParallax() {
+        const currentScrollPosition = window.pageYOffset;
+        const scrollDifference = currentScrollPosition - scrollPosition;
+        
+        parallaxSections.forEach(section => {
+            const speed = 0.5; // Adjust for more or less parallax effect
+            const yPos = -(currentScrollPosition * speed);
+            section.style.backgroundPosition = `center ${yPos}px`;
+        });
+        
+        scrollPosition = currentScrollPosition;
+    }
+    
+    // Initialize parallax effect
+    handleParallax();
+    
+    // Update parallax effect on scroll
+    window.addEventListener('scroll', function() {
+        requestAnimationFrame(handleParallax);
+    });
+    
     // Get all audio elements and play buttons
     const audioPlayers = document.querySelectorAll('.custom-audio-player');
     

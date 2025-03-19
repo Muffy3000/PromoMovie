@@ -10,6 +10,7 @@ body {
     background-color: #0a0a0a;
     color: #ffffff;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .section-title {
@@ -29,16 +30,20 @@ section {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/2.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .movie-title {
@@ -56,8 +61,8 @@ section {
 
 .cta-button a {
     display: inline-block;
-    background-color: #e50914;
-    color: white;
+    background-color: #FFD700;
+    color: black;
     padding: 1rem 2rem;
     text-decoration: none;
     font-weight: bold;
@@ -67,12 +72,14 @@ section {
 }
 
 .cta-button a:hover {
-    background-color: #b2070f;
+    background-color: #DAA520;
 }
 
 /* Characters Section */
 .characters {
     background-color: #111;
+    position: relative;
+    z-index: 1;
 }
 
 .character-cards {
@@ -80,6 +87,8 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .character-card {
@@ -121,7 +130,7 @@ section {
 }
 
 .character-card h4 {
-    color: #e50914;
+    color: #FFD700;
     font-size: 1rem;
     padding: 0 1rem 0.5rem;
     letter-spacing: 1px;
@@ -136,11 +145,15 @@ section {
 /* Plot Section */
 .plot {
     background-color: #0a0a0a;
+    position: relative;
+    z-index: 1;
 }
 
 .plot-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .plot-content p {
@@ -154,11 +167,16 @@ section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/3.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
 }
 
 .antagonist-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .antagonist-info {
@@ -177,7 +195,7 @@ section {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: #e50914;
+    color: #FFD700;
     letter-spacing: 2px;
 }
 
@@ -194,12 +212,16 @@ section {
 /* Gallery Section */
 .gallery {
     padding: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 400px;
+    position: relative;
+    z-index: 2;
 }
 
 .gallery-item {
@@ -210,7 +232,7 @@ section {
 
 .gallery-item:hover {
     transform: scale(1.05);
-    z-index: 1;
+    z-index: 3;
 }
 
 .gallery-item.item1 {
@@ -228,6 +250,8 @@ section {
 /* Radio Spots Section */
 .radio-spots {
     background-color: #0a0a0a;
+    position: relative;
+    z-index: 1;
 }
 
 .radio-container {
@@ -235,6 +259,8 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .radio-item {
@@ -265,8 +291,8 @@ section {
 }
 
 .play-btn {
-    background-color: #e50914;
-    color: white;
+    background-color: #FFD700;
+    color: black;
     border: none;
     width: 50px;
     height: 50px;
@@ -279,7 +305,7 @@ section {
 }
 
 .play-btn:hover {
-    background-color: #b2070f;
+    background-color: #DAA520;
 }
 
 .pause-icon {
@@ -297,7 +323,7 @@ section {
 .progress-bar {
     height: 100%;
     width: 0;
-    background-color: #e50914;
+    background-color: #FFD700;
     transition: width 0.1s linear;
 }
 
@@ -316,12 +342,16 @@ footer {
     background-color: #0a0a0a;
     padding: 3rem 2rem;
     border-top: 1px solid #333;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .movie-info {
