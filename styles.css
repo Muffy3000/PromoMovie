@@ -5,6 +5,51 @@
     box-sizing: border-box;
 }
 
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #FFD700;
+}
+
 /* Video Section */
 .video-section {
     background-color: #0a0a0a;
@@ -92,6 +137,252 @@ section {
 
 .cta-button a:hover {
     background-color: #DAA520;
+}
+
+/* Fan Hero Section */
+.fan-hero {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 8rem 2rem 5rem;
+}
+
+.fan-hero-content {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.character-names {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.5rem;
+}
+
+.character-names h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.character-titles {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.character-titles h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #FFD700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Quote Boxes */
+.quotes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.quote-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border-radius: 15px;
+    padding: 1.5rem;
+    max-width: 350px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.quote-author {
+    font-size: 1rem;
+    color: #555;
+    text-align: right;
+    font-style: italic;
+}
+
+.quote-1 {
+    transform: rotate(-2deg);
+}
+
+.quote-2 {
+    transform: rotate(1deg);
+}
+
+.quote-3 {
+    transform: rotate(-1deg);
+}
+
+.quote-4 {
+    transform: rotate(2deg);
+}
+
+.quote-5 {
+    transform: rotate(-1.5deg);
+}
+
+/* Social Media Section */
+.social-media {
+    background-color: #111;
+    text-align: center;
+}
+
+.social-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-link:hover {
+    transform: translateY(-10px);
+    color: #FFD700;
+}
+
+.social-icon {
+    background-color: #FFD700;
+    color: #000;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover .social-icon {
+    background-color: #fff;
+}
+
+.social-cta {
+    margin-top: 3rem;
+}
+
+.social-cta h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.social-cta p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Fan Engagement Section */
+.fan-engagement {
+    background-color: #0a0a0a;
+}
+
+.engagement-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.engagement-item {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.engagement-icon {
+    background-color: #FFD700;
+    color: #000;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+}
+
+.engagement-item h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.engagement-item p {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FFD700;
+    color: black;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #DAA520;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.subscribe-form input {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.subscribe-form input::placeholder {
+    color: #aaa;
 }
 
 /* Characters Section */
@@ -418,5 +709,35 @@ footer {
     
     .antagonist-info {
         flex-direction: column;
+    }
+    
+    .character-names, .character-titles {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .quotes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-container {
+        gap: 2rem;
+    }
+    
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links li {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
