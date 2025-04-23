@@ -142,7 +142,7 @@ section {
 /* Fan Hero Section */
 .fan-hero {
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/explosion.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/20250405_2115_Eerie Port Ambiance_simple_compose_01jr4ap71wemh9qxk5s0wsh5zc.gif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -421,15 +421,15 @@ section {
 }
 
 .character-image.ava {
-    background-image: url('images/1.png');
+    background-image: url('images/AVA MONET 2.png');
 }
 
 .character-image.jade {
-    background-image: url('images/1.png');
+    background-image: url('images/JADE PARK.png');
 }
 
 .character-image.zariah {
-    background-image: url('images/1.png');
+    background-image: url('images/ZARIAH BOUDREAUX.png');
 }
 
 .character-card h3 {
