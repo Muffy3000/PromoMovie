@@ -53,7 +53,7 @@
 /* Video Section */
 .video-section {
     background-color: #0a0a0a;
-    padding: 2rem 0;
+    padding: 6rem 0 2rem 0; /* Increased top padding to move video lower */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,9 +62,12 @@
 .video-container {
     max-width: 100%;
     text-align: center;
+    width: 80%; /* Added width to make container larger */
 }
 
 .video-container iframe {
+    width: 800px; /* Increased width */
+    height: 450px; /* Increased height proportionally */
     max-width: 100%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }

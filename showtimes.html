@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beauty Connect | Showtimes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific styles for showtimes page */
+        .showtimes-hero {
+            min-height: 60vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 5rem;
+            overflow: hidden;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.4);
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .search-form input {
+            flex-grow: 1;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .search-form input::placeholder {
+            color: #aaa;
+        }
+        
+        .search-form button {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .search-form button:hover {
+            background-color: #DAA520;
+        }
+        
+        .theaters-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .city-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+        
+        .city-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #FFD700;
+        }
+        
+        .theater-card {
+            background-color: rgba(26, 26, 26, 0.9);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theater-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .theater-address {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .showtime-date {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+        
+        .showtime-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .showtime {
+            background-color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .showtime.premium {
+            background-color: #444;
+            border: 1px solid #FFD700;
+        }
+        
+        .buy-tickets {
+            display: inline-block;
+            background-color: #FFD700;
+            color: black;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .buy-tickets:hover {
+            background-color: #DAA520;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">THE BEAUTY CONNECT</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fans.html">Fan Zone</a></li>
+                <li><a href="showtimes.html" class="active">Showtimes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="showtimes-hero">
+        <video class="video-background" autoplay muted loop>
+            <source src="Gen-3 Alpha Turbo 3750384528, A luxury black Merce, Cropped - use thisw, M 5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1 class="movie-title">SHOWTIMES</h1>
+            <p class="tagline">IN THEATERS MAY 15, 2025</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <form class="search-form" id="city-search">
+                    <input type="text" placeholder="Enter your city or zip code" id="city-input">
+                    <button type="submit"><i class="fas fa-search"></i> SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theaters Section -->
+    <section class="theaters">
+        <div class="city-section" id="atlanta">
+            <h2 class="city-title">ATLANTA</h2>
+            <div class="theaters-container">
+                <div class="theater-card">
+                    <h3 class="theater-name">REGAL ATLANTIC STATION</h3>
+                    <p class="theater-address">261 19th St NW, Atlanta, GA 30363</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:30 AM</div>
+                        <div class="showtime">2:15 PM</div>
+                        <div class="showtime">5:00 PM</div>
+                        <div class="showtime">7:45 PM</div>
+                        <div class="showtime premium">10:30 PM IMAX</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:30 AM</div>
+                        <div class="showtime">2:15 PM</div>
+                        <div class="showtime">5:00 PM</div>
+                        <div class="showtime">7:45 PM</div>
+                        <div class="showtime premium">10:30 PM IMAX</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+                
+                <div class="theater-card">
+                    <h3 class="theater-name">AMC PHIPPS PLAZA 14</h3>
+                    <p class="theater-address">3500 Peachtree Rd NE, Atlanta, GA 30326</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">12:00 PM</div>
+                        <div class="showtime">2:45 PM</div>
+                        <div class="showtime">5:30 PM</div>
+                        <div class="showtime">8:15 PM</div>
+                        <div class="showtime premium">11:00 PM Dolby</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">12:00 PM</div>
+                        <div class="showtime">2:45 PM</div>
+                        <div class="showtime">5:30 PM</div>
+                        <div class="showtime">8:15 PM</div>
+                        <div class="showtime premium">11:00 PM Dolby</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+                
+                <div class="theater-card">
+                    <h3 class="theater-name">LANDMARK MIDTOWN ART CINEMA</h3>
+                    <p class="theater-address">931 Monroe Dr NE, Atlanta, GA 30308</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">1:15 PM</div>
+                        <div class="showtime">4:00 PM</div>
+                        <div class="showtime">6:45 PM</div>
+                        <div class="showtime">9:30 PM</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">1:15 PM</div>
+                        <div class="showtime">4:00 PM</div>
+                        <div class="showtime">6:45 PM</div>
+                        <div class="showtime">9:30 PM</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="city-section" id="new-york">
+            <h2 class="city-title">NEW YORK</h2>
+            <div class="theaters-container">
+                <div class="theater-card">
+                    <h3 class="theater-name">AMC EMPIRE 25</h3>
+                    <p class="theater-address">234 W 42nd St, New York, NY 10036</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">10:30 AM</div>
+                        <div class="showtime">1:15 PM</div>
+                        <div class="showtime">4:00 PM</div>
+                        <div class="showtime">6:45 PM</div>
+                        <div class="showtime">9:30 PM</div>
+                        <div class="showtime premium">11:45 PM IMAX</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">10:30 AM</div>
+                        <div class="showtime">1:15 PM</div>
+                        <div class="showtime">4:00 PM</div>
+                        <div class="showtime">6:45 PM</div>
+                        <div class="showtime">9:30 PM</div>
+                        <div class="showtime premium">11:45 PM IMAX</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+                
+                <div class="theater-card">
+                    <h3 class="theater-name">REGAL UNION SQUARE</h3>
+                    <p class="theater-address">850 Broadway, New York, NY 10003</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:00 AM</div>
+                        <div class="showtime">1:45 PM</div>
+                        <div class="showtime">4:30 PM</div>
+                        <div class="showtime">7:15 PM</div>
+                        <div class="showtime">10:00 PM</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:00 AM</div>
+                        <div class="showtime">1:45 PM</div>
+                        <div class="showtime">4:30 PM</div>
+                        <div class="showtime">7:15 PM</div>
+                        <div class="showtime">10:00 PM</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+                
+                <div class="theater-card">
+                    <h3 class="theater-name">ANGELIKA FILM CENTER</h3>
+                    <p class="theater-address">18 W Houston St, New York, NY 10012</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">12:30 PM</div>
+                        <div class="showtime">3:15 PM</div>
+                        <div class="showtime">6:00 PM</div>
+                        <div class="showtime">8:45 PM</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">12:30 PM</div>
+                        <div class="showtime">3:15 PM</div>
+                        <div class="showtime">6:00 PM</div>
+                        <div class="showtime">8:45 PM</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="city-section" id="detroit">
+            <h2 class="city-title">DETROIT</h2>
+            <div class="theaters-container">
+                <div class="theater-card">
+                    <h3 class="theater-name">AMC FORUM 30</h3>
+                    <p class="theater-address">44681 Mound Rd, Sterling Heights, MI 48314</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:15 AM</div>
+                        <div class="showtime">2:00 PM</div>
+                        <div class="showtime">4:45 PM</div>
+                        <div class="showtime">7:30 PM</div>
+                        <div class="showtime premium">10:15 PM IMAX</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:15 AM</div>
+                        <div class="showtime">2:00 PM</div>
+                        <div class="showtime">4:45 PM</div>
+                        <div class="showtime">7:30 PM</div>
+                        <div class="showtime premium">10:15 PM IMAX</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+                
+                <div class="theater-card">
+                    <h3 class="theater-name">EMAGINE ROYAL OAK</h3>
+                    <p class="theater-address">200 N Main St, Royal Oak, MI 48067</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">12:45 PM</div>
+                        <div class="showtime">3:30 PM</div>
+                        <div class="showtime">6:15 PM</div>
+                        <div class="showtime">9:00 PM</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">12:45 PM</div>
+                        <div class="showtime">3:30 PM</div>
+                        <div class="showtime">6:15 PM</div>
+                        <div class="showtime">9:00 PM</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+                
+                <div class="theater-card">
+                    <h3 class="theater-name">MJR DIGITAL CINEMA SOUTHGATE</h3>
+                    <p class="theater-address">15651 Trenton Rd, Southgate, MI 48195</p>
+                    
+                    <p class="showtime-date">Friday, May 15, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:45 AM</div>
+                        <div class="showtime">2:30 PM</div>
+                        <div class="showtime">5:15 PM</div>
+                        <div class="showtime">8:00 PM</div>
+                        <div class="showtime">10:45 PM</div>
+                    </div>
+                    
+                    <p class="showtime-date">Saturday, May 16, 2025</p>
+                    <div class="showtime-list">
+                        <div class="showtime">11:45 AM</div>
+                        <div class="showtime">2:30 PM</div>
+                        <div class="showtime">5:15 PM</div>
+                        <div class="showtime">8:00 PM</div>
+                        <div class="showtime">10:45 PM</div>
+                    </div>
+                    
+                    <a href="#" class="buy-tickets">BUY TICKETS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="movie-info">
+                <h2 class="footer-title">THE BEAUTY CONNECT</h2>
+                <p class="footer-tagline">FAKE PRODUCTS. REAL DANGER. BUSINESS JUST GOT PERSONAL.</p>
+            </div>
+            <div class="credits">
+                <p>STARRING JOURDAN NOELLE, SOPHIA KIM, TATIANA RENÉ, AND NAOMI VEGA</p>
+                <p>DIRECTED BY MUFFY GAYNOR</p>
+                <p>&copy; 2025 GAYNOR FILMS PRODUCTION. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.getElementById('city-search').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchInput = document.getElementById('city-input').value.toLowerCase();
+            
+            // Check if the search matches any of our cities
+            if (searchInput.includes('atlanta')) {
+                document.getElementById('atlanta').scrollIntoView({ behavior: 'smooth' });
+            } else if (searchInput.includes('new york')) {
+                document.getElementById('new-york').scrollIntoView({ behavior: 'smooth' });
+            } else if (searchInput.includes('detroit')) {
+                document.getElementById('detroit').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // If no match, show an alert
+                alert('No showtimes available in this location yet. Please check back later or try another city.');
+            }
+        });
+    </script>
+</body>
+</html>
