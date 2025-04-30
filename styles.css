@@ -53,23 +53,29 @@
 /* Video Section */
 .video-section {
     background-color: #0a0a0a;
-    padding: 6rem 0 2rem 0; /* Increased top padding to move video lower */
+    padding: 2rem 0; /* Added padding top and bottom */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0; /* Removed negative margin since we have proper padding now */
+    position: relative;
+    z-index: 2; /* Ensure it appears above any background elements */
 }
 
 .video-container {
     max-width: 100%;
-    text-align: center;
-    width: 80%; /* Added width to make container larger */
+    width: 85%; /* Reduced width to fit nicely in the section */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: center; /* Center the iframe horizontally */
+    align-items: center; /* Center vertically */
 }
 
 .video-container iframe {
-    width: 800px; /* Increased width */
-    height: 450px; /* Increased height proportionally */
+    width: 900px; /* Fixed width */
+    height: 506px; /* 16:9 aspect ratio */
     max-width: 100%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Added shadow back */
 }
 
 body {
@@ -92,6 +98,7 @@ section {
     padding: 5rem 2rem;
 }
 
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -104,6 +111,7 @@ section {
     justify-content: center;
     text-align: center;
     position: relative;
+    padding: 6rem 2rem 3rem; /* Increased padding to work better as header */
 }
 
 .hero-content {
@@ -393,6 +401,7 @@ section {
     background-color: #111;
     position: relative;
     z-index: 1;
+    /* Using the default section padding since we've added padding to the video section */
 }
 
 .character-cards {
